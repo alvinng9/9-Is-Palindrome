@@ -2,13 +2,16 @@ package org.example;
 
 public class Solution {
     public boolean isPalindrome(int x) {
-        String s = String.valueOf(x);
-        if (s.charAt(0) == '-') {
+        //check if x is negative
+        //a palindrome number cannot be negative
+        if (x < 0) {
             return false;
         }
-
-        for (int i = 0; i < s.length() / 2 ; i++) {
-            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+        //convert the given x to a String
+        String value = String.valueOf(x);
+        //check if the string is a palindrome
+        for (int i = 0; i < value.length()/2; i++) {
+            if (value.charAt(i) != value.charAt(value.length() - 1 - i)) {
                 return false;
             }
         }
